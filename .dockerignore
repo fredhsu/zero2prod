@@ -1,0 +1,12 @@
+.env
+tests/
+target/
+Dockerfile
+scripts/
+migrations/
+Cargo.lock 
+**/*.rs.bk 
+files 
+*.db
+.git
+
