@@ -86,6 +86,9 @@ async fn subscribe_sends_a_confirmation_email_with_a_link() {
 
     app.post_subscriptions(body.into()).await;
     let email_request = &app.email_server.received_requests().await.unwrap()[0];
+    let confirmation_links = app.get_confirmation_links(&email_request);
+
+    assert_eq!(confirmation_links.html, confirmation_links.plain_text);
     let body: serde_json::Value = serde_json::from_slice(&email_request.body).unwrap();
     let get_link = |s: &str| {
         let links: Vec<_> = linkify::LinkFinder::new()
