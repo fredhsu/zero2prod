@@ -18,7 +18,7 @@ validator = "0.14"
 claim = "0.5"
 unicode-segmentation = "1"
 serde-aux = "3"
-tracing-actix-web = "0.6"
+tracing-actix-web = "0.7"
 secrecy = { version = "0.8", features = ["serde"]}
 actix-web = "4"
 env_logger = "0.9"
